@@ -1,12 +1,11 @@
-from flask import Flask, render_template, jsonify, request
-from productos import Productos
+from flask import Flask, jsonify, render_template, request
+
 from config_db import BD
-
-
+from producto import Producto
 
 app = Flask(__name__)
 bd = BD()
-p = Productos()
+p = Producto()
 
 
 @app.route("/")

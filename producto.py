@@ -1,14 +1,16 @@
 import sqlite3
 from sqlite3 import Error
+
 from config_db import BD
 
 bd = BD()
 
-class Productos():
+class Producto():
+
     def select(self):
         conexion = bd.conectar_bd()
         conexion.row_factory = sqlite3.Row
-        sentencia_sql = "SELECT * FROM productos"
+        sentencia_sql = "SELECT * FROM producto"
         try:
             cursor = conexion.cursor()
             cursor.execute(sentencia_sql)
@@ -22,7 +24,7 @@ class Productos():
 
     def select_by_id(self, id):
         conexion = bd.conectar_bd()
-        sentencia_sql = f"SELECT * FROM productos WHERE id = {id}"
+        sentencia_sql = f"SELECT * FROM producto WHERE id = {id}"
         conexion.row_factory = sqlite3.Row # convert row object to dictionary
         try:
             cursor = conexion.cursor()
@@ -36,7 +38,7 @@ class Productos():
 
     def insert(self, producto):
         conexion = bd.conectar_bd()
-        sentencia_sql = "INSERT INTO productos (descripcion, precio) VALUES (?, ?)"
+        sentencia_sql = "INSERT INTO producto (descripcion, precio) VALUES (?, ?)"
         parametros = (producto["descripcion"], producto["precio"])
         try:
             cursor = conexion.cursor()
@@ -51,7 +53,7 @@ class Productos():
 
     def update(self, id, producto):
         conexion = bd.conectar_bd()
-        sentencia_sql = "UPDATE productos SET descripcion = ?, precio = ? WHERE id =?"
+        sentencia_sql = "UPDATE producto SET descripcion = ?, precio = ? WHERE id =?"
         parametros = (producto["descripcion"], producto["precio"], id)
         try:
             cursor = conexion.cursor()
@@ -68,7 +70,7 @@ class Productos():
 
     def delete(self, id):
         conexion = bd.conectar_bd()
-        sentencia_sql = f"DELETE from productos WHERE id = {id}"
+        sentencia_sql = f"DELETE from producto WHERE id = {id}"
         mensaje = {}
         try:
             cursor = conexion.cursor()

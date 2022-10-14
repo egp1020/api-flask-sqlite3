@@ -18,7 +18,7 @@ class BD:
         conexion = self.conectar_bd()
         cursor = conexion.cursor()
         try:
-            sentencia = """CREATE TABLE IF NOT EXISTS productos (
+            sentencia = """CREATE TABLE IF NOT EXISTS producto (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
                             descripcion TEXT NOT NULL,
                             precio REAL NOT NULL)
