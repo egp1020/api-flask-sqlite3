@@ -4,6 +4,7 @@ from config_db import BD
 from producto import Producto
 
 app = Flask(__name__)
+print(__name__)
 bd = BD()
 p = Producto()
 

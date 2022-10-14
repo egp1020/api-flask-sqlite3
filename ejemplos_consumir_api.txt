@@ -1,0 +1,24 @@
+{
+    "descripcion":"Tomate",
+    "precio":500
+}
+{
+    "descripcion":"Manzana",
+    "precio":2200
+}
+{
+    "descripcion":"Pera",
+    "precio":1700
+}
+{
+    "descripcion":"Mango",
+    "precio":2000
+}
+{
+    "descripcion":"Arroz",
+    "precio":2800
+}
+{
+    "descripcion":"Shampoo",
+    "precio":17000
+}
